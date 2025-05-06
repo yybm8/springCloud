@@ -14,9 +14,9 @@ public class UserBookFeignClientFallBack implements UserFeignClient {
         System.out.println("兜底回调调用user-service服务失败");
         List<User> a =new ArrayList<>();
         User u1=new User();
-        u1.setUser_username("兜底回调调用user-service服务失败");
-        u1.setUser_password("兜底回调调用user-service服务失败");
-        u1.setUser_id(id);
+        u1.setUsername("兜底回调调用user-service服务失败");
+        u1.setPassword("兜底回调调用user-service服务失败");
+        u1.setId(id);
         a.add(u1);
         return a;
     }
