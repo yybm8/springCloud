@@ -9,7 +9,6 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    @Select("select * from springcloud.user where user.user_id=#{id}")
     List<User> getUserById(Integer id);
 
     List<User> selectAll(@Param("page")Integer page, @Param("pageSize")Integer pageSize, @Param("username") String username, @Param("password") String password);
