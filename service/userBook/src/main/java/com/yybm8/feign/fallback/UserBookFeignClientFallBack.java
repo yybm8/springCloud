@@ -1,6 +1,7 @@
 package com.yybm8.feign.fallback;
 
 import com.yybm8.feign.UserFeignClient;
+import com.yybm8.pojo.Result;
 import com.yybm8.pojo.User;
 import org.springframework.stereotype.Component;
 
@@ -19,5 +20,10 @@ public class UserBookFeignClientFallBack implements UserFeignClient {
         u1.setId(id);
         a.add(u1);
         return a;
+    }
+
+    @Override
+    public Result UserGetAll() {
+        return Result.noWork();
     }
 }

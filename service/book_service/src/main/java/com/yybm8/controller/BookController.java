@@ -1,7 +1,7 @@
 package com.yybm8.controller;
 
 import com.yybm8.pojo.Book;
-import com.yybm8.pojo.BookPages;
+import com.yybm8.pojo.Pages;
 import com.yybm8.pojo.Result;
 import com.yybm8.service.BookPageService;
 import com.yybm8.service.BookService;
@@ -26,12 +26,12 @@ public class BookController {
     }
 
     @PostMapping("/page")
-    public Result page(@RequestBody BookPages bookPages)
+    public Result page(@RequestBody Pages pages)
     {
-        int page=bookPages.getPage();
-        int pageSize=bookPages.getPageSize();
-        String book_name=bookPages.getBook_name();
-        String book_author=bookPages.getBook_author();
+        int page=pages.getPage();
+        int pageSize=pages.getPageSize();
+        String book_name=pages.getBook_name();
+        String book_author=pages.getBook_author();
 
         return bookPageService.page(page,pageSize,book_name,book_author);
     }
@@ -57,5 +57,9 @@ public class BookController {
             return Result.noWork();
         }
         return bookPageService.update(book);
+    }
+    @PostMapping("/BookGetAll")
+    public Result BookGetAll(){
+        return bookPageService.getAll();
     }
 }

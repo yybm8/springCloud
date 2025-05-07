@@ -15,4 +15,6 @@ public interface UserService {
     Result delete(User user);
 
     Result update(User user);
+
+    Result getAll();
 }

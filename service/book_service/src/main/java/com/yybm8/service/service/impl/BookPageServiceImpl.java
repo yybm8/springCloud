@@ -2,10 +2,8 @@ package com.yybm8.service.service.impl;
 
 import com.yybm8.mapper.BookMapper;
 import com.yybm8.pojo.Book;
-import com.yybm8.pojo.BookPages;
 import com.yybm8.pojo.Result;
 import com.yybm8.service.BookPageService;
-import com.yybm8.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,6 +57,17 @@ public class BookPageServiceImpl implements BookPageService {
         String book_name=book.getBook_name();
         String book_author=book.getBook_author();
         return bookMapper.update(book_id,book_name,book_author)?Result.yesWork():Result.fail();
+    }
+
+    @Override
+    public Result getAll() {
+        List<Book> book=bookMapper.getBookSelectAll();
+        if(book.isEmpty()){
+            return Result.noData();
+        }
+        else{
+            return Result.success(book);
+        }
     }
 
 }

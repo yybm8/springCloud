@@ -1,12 +1,15 @@
 package com.yybm8.feign;
 
 
+import com.yybm8.feign.fallback.BookFeignClientFallBack;
 import com.yybm8.feign.fallback.UserBookFeignClientFallBack;
+import com.yybm8.pojo.Result;
 import com.yybm8.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
@@ -20,4 +23,7 @@ public interface UserFeignClient {
     //括号内id和token是建
     @GetMapping("/api/user/user/{id}")
     List<User> getUser(@PathVariable("id") Integer id);
+
+    @PostMapping("/api/user/UserGetAll")
+     Result UserGetAll();
 }

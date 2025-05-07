@@ -71,4 +71,8 @@
         </set>
         where id=#{id}
     </update>
+
+    <select  id="getUserBookSelectAll" resultType="com.yybm8.pojo.User">
+        select * from user
+    </select>
 </mapper>

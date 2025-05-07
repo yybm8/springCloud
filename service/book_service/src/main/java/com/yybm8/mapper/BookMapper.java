@@ -20,4 +20,6 @@ public interface BookMapper {
     boolean delete(@Param("book_id") int book_id,@Param("book_name") String book_name, @Param("book_author") String book_author);
 
     boolean update( @Param("book_id") int book_id,@Param("book_name") String book_name, @Param("book_author") String book_author);
+
+    List<Book> getBookSelectAll();
 }

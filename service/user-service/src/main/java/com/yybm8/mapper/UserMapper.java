@@ -20,4 +20,6 @@ public interface UserMapper {
     boolean delete(User user);
 
     boolean update(User user);
+
+    List<User> getUserBookSelectAll ();
 }

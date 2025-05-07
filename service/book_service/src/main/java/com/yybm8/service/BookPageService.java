@@ -1,7 +1,6 @@
 package com.yybm8.service;
 
 import com.yybm8.pojo.Book;
-import com.yybm8.pojo.BookPages;
 import com.yybm8.pojo.Result;
 
 public interface BookPageService {
@@ -12,4 +11,6 @@ public interface BookPageService {
     Result delete(Book book);
 
     Result update(Book book);
+
+    Result getAll();
 }

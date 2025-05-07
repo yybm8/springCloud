@@ -62,4 +62,8 @@
         </set>
         where book_id= #{book_id}
     </update>
+
+    <select id="getBookSelectAll" resultType="com.yybm8.pojo.Book">
+        select * from book
+    </select>
 </mapper>

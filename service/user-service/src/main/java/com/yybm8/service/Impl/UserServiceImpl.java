@@ -75,6 +75,17 @@ public class UserServiceImpl implements UserService {
         return IF(a);
     }
 
+    @Override
+    public Result getAll() {
+       List<User> user=usermapper.getUserBookSelectAll();
+       if(user.isEmpty()){
+           return Result.noData();
+       }
+       else{
+           return Result.success(user);
+       }
+    }
+
     public Result IF(boolean a){
         if(a) {
             return Result.yesWork();

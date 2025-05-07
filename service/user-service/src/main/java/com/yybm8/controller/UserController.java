@@ -59,4 +59,9 @@ public class UserController {
         }
         return userService.update(user);
     }
+
+    @PostMapping("/UserGetAll")
+    public Result UserGetAll(){
+        return userService.getAll();
+    }
 }
