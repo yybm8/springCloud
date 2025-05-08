@@ -14,4 +14,9 @@ public class Pages {
     private String password;
     private String book_name;
     private String book_author;
+    private String goods_name;
+    private String goods_from;
+    private String goods_price;
+    private Integer goods_number;
+
 }

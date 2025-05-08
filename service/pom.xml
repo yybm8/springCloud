@@ -13,6 +13,7 @@
         <module>user-service</module>
         <module>book_service</module>
         <module>userBook</module>
+        <module>other-service</module>
     </modules>
     <artifactId>service</artifactId>
     <properties>

@@ -10,6 +10,7 @@
         <module name="userBook" />
         <module name="model" />
         <module name="user-service" />
+        <module name="other-service" />
         <module name="gateWay" />
         <module name="book_service" />
       </profile>
@@ -25,6 +26,7 @@
       <module name="gateWay" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="model" options="-parameters" />
+      <module name="other-service" options="-parameters" />
       <module name="service" options="" />
       <module name="service-user" options="-parameters" />
       <module name="springCloud" options="" />

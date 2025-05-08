@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yybm8.mapper.GoodsMapper">
+    <select id="page" resultType="com.yybm8.pojo.Goods">
+        select * from goods <where>
+        <if test="goods_name != null">
+            goods_name like concat('%',#{goods_name},'%')
+        </if>
+        <if test="goods_from != null">
+            and goods_from like concat('%',#{goods_from},'%')
+        </if>
+        <if test="goods_price != null">
+            and goods_price like concat('%',#{goods_price},'%')
+        </if>
+    </where>limit #{page},#{page_size}
+    </select>
+    <select id="count" resultType="int">
+        select count(*) from goods <where>
+        <if test="goods_name != null">
+            goods_name like concat('%',#{goods_name},'%')
+        </if>
+        <if test="goods_from != null">
+            and goods_from like concat('%',#{goods_from},'%')
+        </if>
+        <if test="goods_price != null">
+            and goods_price like concat('%',#{goods_price},'%')
+        </if>
+        </where>
+    </select>
+</mapper>

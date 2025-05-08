@@ -32,7 +32,7 @@ public class BookController {
         int pageSize=pages.getPageSize();
         String book_name=pages.getBook_name();
         String book_author=pages.getBook_author();
-
+        System.out.println(page+"//"+pageSize+book_name+book_author);
         return bookPageService.page(page,pageSize,book_name,book_author);
     }
     @PostMapping("/insert")
@@ -50,7 +50,6 @@ public class BookController {
         }
         return bookPageService.delete(book);
     }
-
     @PostMapping("/update")
     public Result update(@RequestBody Book book){
         if(book.getBook_id()==null){

@@ -8,9 +8,6 @@ spring:
     nacos:
       server-addr: 127.0.0.1:8848
   application:
-    name: book-service
+    name: other-service
 server:
-  port: 8000
-
-
- 
+  port: 8003

@@ -18,6 +18,7 @@ public class BookPageServiceImpl implements BookPageService {
 
     @Override
     public Result page(int page, int pageSize, String book_name, String book_author) {
+        page=(page-1)*pageSize;
         System.out.println(book_name+book_author);
         int count=bookMapper.selectCount(book_name,book_author);
         List<Book> book=bookMapper.selectAll(page,pageSize,book_name,book_author);

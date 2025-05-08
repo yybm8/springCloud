@@ -23,7 +23,6 @@ public class UserBookController {
     @GetMapping("/userBooks/{id}")
     public List<User> getUser(@PathVariable("id") Integer id)
     {
-
         return userFeignClient.getUser(id);
     }
 
